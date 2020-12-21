@@ -81,6 +81,12 @@ public class Player
 		setTurnScore(0);
 	}
 
+	public void penalizeChips(int i) {
+		setNumberChips(getNumberChips() - i);
+
+		
+	}
+
 
 
 }

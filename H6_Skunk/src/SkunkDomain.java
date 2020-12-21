@@ -155,7 +155,9 @@ public class SkunkDomain
 				{
 					ui.println("Two Skunks! You lose the turn, zeroing out both turn and game scores and paying 4 chips to the kitty");
 					kitty += 4;
-					activePlayer.setNumberChips(activePlayer.getNumberChips() - 4);
+					
+					//low cohesion. Move this responsibility to Player
+					activePlayer.penalizeChips(4);
 					activePlayer.setTurnScore(0);
 					activePlayer.setGameScore(0);
 					wantsToRoll = false;
