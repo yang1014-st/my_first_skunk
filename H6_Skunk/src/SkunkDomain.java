@@ -168,7 +168,7 @@ public class SkunkDomain
 					ui.println(
 							"Skunks and Deuce! You lose the turn, zeroing out the turn score and paying 2 chips to the kitty");
 					kitty += 2;
-					activePlayer.setNumberChips(activePlayer.getNumberChips() - 2);
+					activePlayer.penalizeChips(2);
 					activePlayer.setTurnScore(0);
 					wantsToRoll = false;
 
@@ -177,7 +177,7 @@ public class SkunkDomain
 				{
 					ui.println("One Skunk!  You lose the turn, zeroing out the turn score and paying 1 chip to the kitty");
 					kitty += 1;
-					activePlayer.setNumberChips(activePlayer.getNumberChips() - 1);
+					activePlayer.penalizeChips(1);
 					activePlayer.setTurnScore(0);
 					wantsToRoll = false;
 				}
