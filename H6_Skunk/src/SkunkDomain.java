@@ -3,6 +3,7 @@ import edu.princeton.cs.introcs.*;
 
 public class SkunkDomain
 {
+	private static final int DOUBLE_SKUNK_CHIP_PENALITY = 4;
 	private static final int SKUNK_DEUCE_CHIP_PENALITY = 2;
 	private static final int SKUNK_DEUCE_SUM = 3;
 	public SkunkUI skunkUI;
@@ -155,10 +156,10 @@ public class SkunkDomain
 				if (isDoubleSkunk())
 				{
 					ui.println("Two Skunks! You lose the turn, zeroing out both turn and game scores and paying 4 chips to the kitty");
-					kitty += 4;
+					kitty += DOUBLE_SKUNK_CHIP_PENALITY;
 					
 					//low cohesion. Move this responsibility to Player
-					activePlayer.penalizeChips(4);
+					activePlayer.penalizeChips(DOUBLE_SKUNK_CHIP_PENALITY); //remove the magic number
 					activePlayer.setTurnScore(0);
 					activePlayer.setGameScore(0);
 					wantsToRoll = false;
@@ -168,7 +169,7 @@ public class SkunkDomain
 				{
 					ui.println(
 							"Skunks and Deuce! You lose the turn, zeroing out the turn score and paying 2 chips to the kitty");
-					kitty += SKUNK_DEUCE_CHIP_PENALITY;
+					kitty += SKUNK_DEUCE_CHIP_PENALITY;//remote the magic numbe
 					activePlayer.penalizeChips(SKUNK_DEUCE_CHIP_PENALITY);
 					activePlayer.setTurnScore(0);
 					wantsToRoll = false;
