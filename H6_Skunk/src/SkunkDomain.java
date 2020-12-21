@@ -71,7 +71,7 @@ public class SkunkDomain
 					wantsToRoll = false;
 					break;
 				}
-				else if (isSkunkDeuce()) // Difficult to Ready
+				else if (isSkunkDeuce()) // Difficult to Ready 
 				{
 					ui.println(
 							"Skunks and Deuce! You lose the turn, zeroing out the turn score and paying 2 chips to the kitty");
