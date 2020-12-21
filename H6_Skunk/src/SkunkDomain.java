@@ -3,6 +3,7 @@ import edu.princeton.cs.introcs.*;
 
 public class SkunkDomain
 {
+	private static final int SKUNK_DEUCE_CHIP_PENALITY = 2;
 	private static final int SKUNK_DEUCE_SUM = 3;
 	public SkunkUI skunkUI;
 	public UI ui;
@@ -167,8 +168,8 @@ public class SkunkDomain
 				{
 					ui.println(
 							"Skunks and Deuce! You lose the turn, zeroing out the turn score and paying 2 chips to the kitty");
-					kitty += 2;
-					activePlayer.penalizeChips(2);
+					kitty += SKUNK_DEUCE_CHIP_PENALITY;
+					activePlayer.penalizeChips(SKUNK_DEUCE_CHIP_PENALITY);
 					activePlayer.setTurnScore(0);
 					wantsToRoll = false;
 
