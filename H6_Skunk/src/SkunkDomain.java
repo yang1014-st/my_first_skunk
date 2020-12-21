@@ -81,8 +81,8 @@ public class SkunkDomain
 				{
 					ui.println(
 							"Skunks and Deuce! You lose the turn, zeroing out the turn score and paying 2 chips to the kitty");
-					kitty += 2;
-					activePlayer.scoreSkunkRoll(2);
+					kitty += SKUNK_DEUCE_CHIP_PENALITY;
+					activePlayer.scoreSkunkRoll(SKUNK_DEUCE_CHIP_PENALITY);
 
 					wantsToRoll = false;
 					break;
