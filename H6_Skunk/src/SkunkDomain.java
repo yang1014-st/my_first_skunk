@@ -54,8 +54,8 @@ public class SkunkDomain
 			ui.println("Next player is " + playerNames[activePlayerIndex] + ".");
 			activePlayer.setTurnScore(0);
 			
-			String wantsToRollStr = ui.promptReadAndReturn("Roll? y or n");
-			boolean wantsToRoll = 'y' == wantsToRollStr.toLowerCase().charAt(0);
+			//repeat code, low cohesion, therefore, I want to crate a separate code.
+			boolean wantsToRoll = chooseToRoll();//
 			
 			while (wantsToRoll)
 			{
@@ -97,8 +97,9 @@ public class SkunkDomain
 				ui.println(
 						"Roll of " + skunkDice.toString() + ", gives new turn score of " + activePlayer.getTurnScore());
 
-				wantsToRollStr = ui.promptReadAndReturn("Roll again? y or n");
-				wantsToRoll = 'y' == wantsToRollStr.toLowerCase().charAt(0);
+				//Duplicate code for wants To Roll
+				wantsToRoll = chooseToRoll();//
+
 
 			}
 
@@ -236,6 +237,11 @@ public class SkunkDomain
 
 		ui.println("-----------------------");
 		return true;
+	}
+
+	private boolean chooseToRoll() {
+		String wantsToRollStr = ui.promptReadAndReturn("Roll? y or n");
+		return 'y' == wantsToRollStr.toLowerCase().charAt(0);
 	}
 
 }
