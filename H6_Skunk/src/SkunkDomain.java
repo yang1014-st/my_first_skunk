@@ -141,9 +141,10 @@ public class SkunkDomain
 		{
 			ui.println("Last turn for player " + playerNames[activePlayerIndex] + "...");
 			activePlayer.setTurnScore(0);
-
-			String wantsToRollStr = ui.promptReadAndReturn("Roll? y or n");
-			boolean wantsToRoll = 'y' == wantsToRollStr.toLowerCase().charAt(0);
+			
+			//Repeat code again for chooseToRoll();
+			boolean wantsToRoll = chooseToRoll();
+	
 
 			while (wantsToRoll)
 			{
@@ -196,8 +197,7 @@ public class SkunkDomain
 					}
 					ui.println("-----------------------");
 
-					wantsToRollStr = ui.promptReadAndReturn("Roll again? y or n");
-					wantsToRoll = 'y' == wantsToRollStr.toLowerCase().charAt(0);
+					wantsToRoll = chooseToRoll();
 				}
 
 			}
