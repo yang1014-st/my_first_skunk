@@ -61,7 +61,7 @@ public class SkunkDomain
 			{
 				activePlayer.setRollScore(0);
 				skunkDice.roll();
-				if (skunkDice.getLastRoll() == 2)
+				if (isDoubleSkunk()) //difficult to read
 				{
 					ui.println("Two Skunks! You lose the turn, zeroing out both turn and game scores and paying 4 chips to the kitty");
 					kitty += 4;
@@ -148,7 +148,7 @@ public class SkunkDomain
 				skunkDice.roll();
 				ui.println("Roll is " + skunkDice.toString() + "\n");
 
-				if (skunkDice.getLastRoll() == 2)
+				if (isDoubleSkunk())
 				{
 					ui.println("Two Skunks! You lose the turn, zeroing out both turn and game scores and paying 4 chips to the kitty");
 					kitty += 4;
@@ -237,6 +237,10 @@ public class SkunkDomain
 
 		ui.println("-----------------------");
 		return true;
+	}
+
+	private boolean isDoubleSkunk() {
+		return skunkDice.getLastRoll() == 2;
 	}
 
 	private boolean chooseToRoll() {
