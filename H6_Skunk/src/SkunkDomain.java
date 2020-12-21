@@ -66,8 +66,9 @@ public class SkunkDomain
 				{
 					ui.println("Two Skunks! You lose the turn, zeroing out both turn and game scores and paying 4 chips to the kitty");
 					kitty += 4;
-					activePlayer.setNumberChips(activePlayer.getNumberChips() - 4);
-					activePlayer.setTurnScore(0);
+					//Repeatedly use code. 
+					activePlayer.scoreSkunkRoll(4);
+
 					activePlayer.setGameScore(0);
 					wantsToRoll = false;
 					break;
@@ -245,7 +246,7 @@ public class SkunkDomain
 	}
 
 	private boolean isSkunkDeuce() {
-		return skunkDice.getLastRoll() == SKUNK_DEUCE_SUM;
+		return skunkDice.getLastRoll() == SKUNK_DEUCE_SUM; //Remove 'Magic number'
 	}
 
 	private boolean isDoubleSkunk() {
