@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import edu.princeton.cs.introcs.*;
 
 public class SkunkDomain
+
 {
 	private static final int REGULAR_SKUNK_CHIP_PENALITY = 1;
 	private static final int DOUBLE_SKUNK_CHIP_PENALITY = 4;
@@ -68,9 +69,9 @@ public class SkunkDomain
 				if (isDoubleSkunk()) //difficult to read
 				{
 					ui.println("Two Skunks! You lose the turn, zeroing out both turn and game scores and paying 4 chips to the kitty");
-					kitty += 4;
+					kitty += DOUBLE_SKUNK_CHIP_PENALITY;
 					//Repeatedly use code. 
-					activePlayer.scoreSkunkRoll(4);
+					activePlayer.scoreSkunkRoll(DOUBLE_SKUNK_CHIP_PENALITY);
 
 					activePlayer.setGameScore(0);
 					wantsToRoll = false;
